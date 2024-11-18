@@ -1,0 +1,50 @@
+.CalcCont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*justify-content: center;*/
+    width: 400px;
+    /*height: 600px;*/
+    background-color: red;
+}
+
+.value{
+    width: 100%;
+    height: 200px;
+    background-color: #8484ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.oprations{
+    width: 100%;
+    height: 50px;
+    background-color: green;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    place-items: center;
+}
+
+.ope{
+    background-color: orange;
+    font-size: 34px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.Numbers{
+    width: 100%;
+    display: grid;
+    gap: 5px;
+    padding: 10px 0;
+   place-items: center;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+}
+
