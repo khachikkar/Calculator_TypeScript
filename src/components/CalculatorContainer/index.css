@@ -3,24 +3,38 @@
     flex-direction: column;
     align-items: center;
     /*justify-content: center;*/
-    width: 400px;
+    width: 420px;
     /*height: 600px;*/
-    background-color: red;
+    background-color: #222121;
+    border-radius: 8px;
 }
 
-.value{
+.value {
     width: 100%;
     height: 200px;
-    background-color: #8484ec;
+    background-color: #222121;
+    color: white;
+    border-radius: 8px 8px 0 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-end;
+    overflow-y: auto; /* Enable vertical scrolling */
+    /*overflow-x: hidden; !* Prevent horizontal scrolling *!*/
+
+    h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        word-wrap: break-word; /* Allow text to wrap inside the container */
+    }
 }
+
+
 
 .oprations{
     width: 100%;
     height: 50px;
-    background-color: green;
+    /*background-color: green;*/
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     place-items: center;
@@ -34,9 +48,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 0.2px solid black;
+    /*border-radius: 8px;*/
+    cursor: pointer;
+}
+
+.ope:hover{
+    background-color: rgba(255, 165, 0, 0.33);
+    color: white;
+}
+
+.opeC{
+    /*border-radius: 8px;*/
+    background-color: white;
+    color: orange;
+    font-size: 34px;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 
+.opeC:hover{
+    background-color: black;
+    color: white;
+}
 
 
 .Numbers{

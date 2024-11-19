@@ -2,7 +2,7 @@ import "./index.css"
 import {FC} from "react";
 
 interface I_NUmberItem{
-    value: number
+    value: number | string;
     onClick: (e:React.MouseEvent<HTMLDivElement>)=> void
 }
 

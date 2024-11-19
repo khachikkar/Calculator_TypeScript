@@ -8,7 +8,7 @@ interface I_Value{
 
 const makestringsplited = (str:string)=>{
 
-    return "="+Number(str).toFixed(2).toString()
+    return "="+Number(str).toFixed(2)
 }
 
 const Value:FC<I_Value> = ({res, oper})=>{

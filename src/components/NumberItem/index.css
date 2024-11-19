@@ -7,4 +7,10 @@
     font-size: 50px;
     width: 80px;
     height: 80px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.num:hover {
+    background-color: rgba(0, 0, 0, 0.39);
 }
