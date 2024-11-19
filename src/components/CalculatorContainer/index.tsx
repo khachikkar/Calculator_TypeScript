@@ -3,7 +3,7 @@ import {FC, useState} from "react";
 import NumberItem from "../NumberItem";
 import Value from "../value";
 import OperationItem from "../OperationItem";
-
+import C from "../Ccomponent"
 
 
 interface I_CalcCont{
@@ -26,7 +26,7 @@ const onClick = (e:React.MouseEvent<HTMLDivElement>)=>{
         return
     }
 
-    const content = e.currentTarget.textContent || ""; // Fallback to empty string if null
+    const content = e.currentTarget.textContent || "";
 
     if(res.length === 0){
         if (content === "+" || content === "-" || content === "*" || content === "/"){
@@ -52,6 +52,10 @@ const onClick = (e:React.MouseEvent<HTMLDivElement>)=>{
 
 }
 
+const hanmdleClearArea = () =>{
+    setRes("")
+    setOper("")
+}
 
 
 console.log(res, "KKK")
@@ -65,29 +69,16 @@ return (
             </div>
 
             <div className="oprations">
-
-
-                {
-                    operations.map(val=> <OperationItem  onClick={onClick} val={val} />)
-                }
-
-
-                <div onClick={()=>{
-                    setRes("")
-                    setOper("")
-                }} className="ope">
-                    C
-                </div>
+                {operations.map(val=> <OperationItem  onClick={onClick} val={val} />)}
+                <C onClick={hanmdleClearArea} />
             </div>
 
             <div className="Numbers">
-                {
-                    numbers.map((value)=> <NumberItem key={value} onClick={onClick} value={value} />)
-                }
+                {numbers.map((value) => <NumberItem key={value} onClick={onClick} value={value}/>)}
             </div>
 
         </div>
-    )
+)
 }
 
 
