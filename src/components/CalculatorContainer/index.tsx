@@ -1,6 +1,7 @@
 import "./index.css"
 import {FC, useState} from "react";
 import NumberItem from "../NumberItem";
+import Value from "../value";
 
 
 
@@ -59,26 +60,23 @@ const onClick = (e:React.MouseEvent<HTMLDivElement>)=>{
 console.log(res, "KKK")
 
 
-const makestringsplited = (str:string)=>{
 
-   return "="+Number(str).toFixed(2).toString()
-}
 
     return (
         <div className="CalcCont">
+
             <div className="value">
-               <h1>
-                   {res}
-                   {
-                     oper &&  makestringsplited(oper)
-                   }
-               </h1>
+              <Value oper={oper} res={res} />
             </div>
 
             <div className="oprations">
+
+
                 {
                     operations.map(val=> <div onClick={onClick} className="ope" key={val}>{val}</div>)
                 }
+
+
                 <div onClick={()=>{
                     setRes("")
                     setOper("")
