@@ -2,6 +2,7 @@ import "./index.css"
 import {FC, useState} from "react";
 import NumberItem from "../NumberItem";
 import Value from "../value";
+import OperationItem from "../OperationItem";
 
 
 
@@ -14,11 +15,10 @@ const CalculatorContainer:FC<I_CalcCont> = ({numbers, operations}) => {
 
 
 const [oper, setOper] = useState<string>("")
-
 const [res, setRes] = useState<(string)>("")
 
-const onClick = (e:React.MouseEvent<HTMLDivElement>)=>{
 
+const onClick = (e:React.MouseEvent<HTMLDivElement>)=>{
 
     // if already have result after =
     if(oper.length >0){
@@ -26,9 +26,7 @@ const onClick = (e:React.MouseEvent<HTMLDivElement>)=>{
         return
     }
 
-
     const content = e.currentTarget.textContent || ""; // Fallback to empty string if null
-
 
     if(res.length === 0){
         if (content === "+" || content === "-" || content === "*" || content === "/"){
@@ -36,7 +34,6 @@ const onClick = (e:React.MouseEvent<HTMLDivElement>)=>{
             return;
         }
     }
-
 
     //if clicked =
     if(content === "="){
@@ -60,9 +57,7 @@ const onClick = (e:React.MouseEvent<HTMLDivElement>)=>{
 console.log(res, "KKK")
 
 
-
-
-    return (
+return (
         <div className="CalcCont">
 
             <div className="value">
@@ -73,7 +68,7 @@ console.log(res, "KKK")
 
 
                 {
-                    operations.map(val=> <div onClick={onClick} className="ope" key={val}>{val}</div>)
+                    operations.map(val=> <OperationItem  onClick={onClick} val={val} />)
                 }
 
 
